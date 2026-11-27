@@ -9,7 +9,9 @@
 ## 1. Claude Code
 1. Node.js 20+ ve pnpm kur (`npm i -g pnpm`).
 2. Claude Code'u kur ve Pro hesabınla giriş yap (resmi kurulum sayfasındaki komutla).
-3. `/model opus` dene: çalışıyorsa Müdür Opus ile çalışır; çalışmıyorsa `mudur.md` içindeki `model: opus` satırını `model: sonnet` yap.
+3. Repoda `claude` çalıştır: `.claude/settings.json` içindeki `"agent": "mudur"` ana oturumu Müdür yapar (Opus).
+   Açılışta `/agents` yaz, 8 ajanın listelendiğini gör. Sürümün `agent` ayarını tanımıyorsa `claude --agent mudur` ile aç.
+   Planın Opus'a izin vermiyorsa yalnızca `mudur.md` içindeki `model: opus` satırını `model: sonnet` yap.
 
 ## 2. GitHub (kodun asıl yeri)
 Repo hazır: `github.com/burakgultekin93/Sitezeka` (özel olduğundan emin ol: Settings → General → Danger Zone → Change visibility).
@@ -37,10 +39,11 @@ Drive'daki `Site Zeka` klasörü kullanılır (zaten var). İçine alt klasörle
 `.claude/settings.local.json` kullan; o dosya `.gitignore`'da, GitHub'a gitmez. Repodaki içerik:
 ```json
 {
-  "model": "sonnet",
+  "agent": "mudur",
   "permissions": {
     "allow": ["Bash(pnpm *)", "Bash(npx prisma *)", "Bash(git status)", "Bash(git diff *)",
               "Bash(git add *)", "Bash(git commit *)", "Bash(bash scripts/drive-sync.sh*)"],
+    "ask":   ["Bash(git push*)", "Bash(git merge*)", "Bash(gh pr merge*)"],
     "deny":  ["Read(./.env)", "Read(./.env.*)", "Read(./**/*.pem)", "Read(./**/*.key)",
               "Bash(git push --force*)", "Bash(git push -f*)", "Bash(rm -rf *)"]
   }
@@ -53,15 +56,15 @@ araştırma skill'leri, docx/xlsx skill'leri. Her ajan kendi tanımında hangi s
 yeni skill eklediğinde ilgili ajanın `.md` dosyasındaki "Skill kullanımı" bölümüne adını yaz.
 
 ## 7. İlk oturum (kopyala-yapıştır)
-Klasörde `claude` çalıştır, `/model opus` yaz, sonra:
+Klasörde `claude` çalıştır (Müdür otomatik açılır), sonra:
 
 > Sen bu ajansın Müdürüsün. CLAUDE.md, docs/VIZYON.md ve docs/PLAN-DEMO.md'yi oku. Aşama 0'ı başlat:
 > arge'ye 6 vay-be anının spec'ini, hukuk'a kural kartları ve test senaryolarını, pazarlama'ya rakip tablosu
 > ve demo senaryosunu yaptır (aynı anda en fazla 2 ajan). Bitince bana ONAY listesini ve benim yapmam
-> gerekenleri göster. Plan bitince Sonnet'e geçmemi hatırlat.
+> gerekenleri göster.
 
 ## 8. Günlük kullanım
-- Sabah: `/model opus` → "Durumu oku, bugünün planını çıkar, onay bekleyenleri sor." → `/model sonnet`
+- Sabah: "Durumu oku, bugünün planını çıkar, onay bekleyenleri sor." (Müdür Opus'ta, ajanlar Sonnet/Haiku'da kalır)
 - Gün içi: "Plandaki sıradaki görevleri ajanlara ver."
 - Akşam: "Gün sonu denetimi yap, arsiv'e özet ve Drive senkronu yaptır, bana raporu ver."
 - Limit dolarsa: "Kaldığımız yeri GOREVLER.md'ye yaz." → 5 saat sonra devam.

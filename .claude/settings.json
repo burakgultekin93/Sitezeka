@@ -1,5 +1,5 @@
 {
-  "model": "sonnet",
+  "agent": "mudur",
   "permissions": {
     "allow": [
       "Bash(pnpm *)",
@@ -9,6 +9,11 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(bash scripts/drive-sync.sh*)"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(git merge*)",
+      "Bash(gh pr merge*)"
     ],
     "deny": [
       "Read(./.env)",
