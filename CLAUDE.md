@@ -69,6 +69,8 @@ docs/             VIZYON, PLAN-DEMO, GOREVLER, KARARLAR, ONAY, BURAK-YAPACAK, sp
 .claude/agents/   ajanlar
 .claude/skills/   yetenekler (Burak yenilerini ekler; ajanlar kendi listesindekileri kullanır)
 scripts/          drive-sync.sh
+demo-dosyalar/    sahte banka ekstresi, fatura görselleri, Yönetimcell örneği
+demo-ekran/       QA ekran görüntüleri (Drive 04-Demo'ya gider)
 ```
 
 ## Günlük ritim
