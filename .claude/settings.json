@@ -1,0 +1,28 @@
+{
+  "agent": "mudur",
+  "permissions": {
+    "allow": [
+      "Bash(pnpm *)",
+      "Bash(npx prisma *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(bash scripts/drive-sync.sh*)"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(git merge*)",
+      "Bash(gh pr merge*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./**/*.pem)",
+      "Read(./**/*.key)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(rm -rf *)"
+    ]
+  }
+}

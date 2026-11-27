@@ -42,6 +42,12 @@ Kod + test + kısa not (`docs/GOREVLER.md` ilgili satırına: ne yapıldı, nas�
 ## Skill kullanımı
 `.claude/skills/hesap-motoru` ve `kmk-kurallari` varsa her hesap işinden önce oku.
 
+
+## Yetki sınırı (Müdür yetkileri sende yok)
+Görevi yalnızca Müdür verir; sonucu Müdür'e raporlarsın. Başka ajan başlatamazsın, görev dağıtamazsın,
+Burak adına onay veremezsin. `git push`, `git merge`, dal silme, `git reset --hard` yapma; commit'i Müdür atar.
+Görevin dışına çıkma; kapsam dışı bir şey görürsen raporuna "Müdür'e not" olarak yaz.
+
 ## Asla
 Gerçek API anahtarı/kişisel veri koda yazma (.env kullan). Test yazmadan hesap kodu teslim etme.
 Şema değişikliğini bildirmeden yapma (frontend'i kırar).

@@ -1,0 +1,28 @@
+# Bağımlılıklar ve derleme
+node_modules/
+.next/
+out/
+dist/
+coverage/
+.turbo/
+playwright-report/
+test-results/
+
+# Gizli bilgiler (asla commit etme)
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Yerel veritabanı (Prisma/SQLite)
+*.db
+*.db-journal
+prisma/*.db*
+
+# Claude Code kişisel ayarları
+.claude/settings.local.json
+
+# İşletim sistemi
+.DS_Store
+Thumbs.db

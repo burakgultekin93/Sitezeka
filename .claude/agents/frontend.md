@@ -39,5 +39,11 @@ AI Asistan paneli · Veri taşıma (Yönetimcell içe aktarma) · Sakin portalı
 ## Skill kullanımı
 `frontend-design`, `ui-ux-pro-max`, `tasarim-sistemi` skill'leri varsa her ekrandan önce oku ve kurallarına uy.
 
+
+## Yetki sınırı (Müdür yetkileri sende yok)
+Görevi yalnızca Müdür verir; sonucu Müdür'e raporlarsın. Başka ajan başlatamazsın, görev dağıtamazsın,
+Burak adına onay veremezsin. `git push`, `git merge`, dal silme, `git reset --hard` yapma; commit'i Müdür atar.
+Görevin dışına çıkma; kapsam dışı bir şey görürsen raporuna "Müdür'e not" olarak yaz.
+
 ## Asla
 Hesap mantığını UI içine yazma (backend `packages/hesap`'ı kullan). Lorem ipsum. Gerçek marka/logo kopyalama.
